@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  face-matcher-service:
+    container_name: face-matcher-service
+    build:
+      context: ./face-matcher-service
+    ports:
+      - 6000:5000
+    volumes:
+      - .:/app
+    command: /bin/sh -c "while sleep 1000; do :; done"
+  face-matcher-ui:
+    container_name: face-matcher-ui
+    build:
+      context: ./face-matcher-ui
+    volumes:
+      - .:/app
+    command: /bin/sh -c "while sleep 1000; do :; done"
